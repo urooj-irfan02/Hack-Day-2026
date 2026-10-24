@@ -1,0 +1,247 @@
+{
+  "summary": {
+    "description": "Synthetic 3-day WhatsApp chat for The Sweet Treats Bakery",
+    "totalOrders": 7,
+    "activeOrders": 6,
+    "cancelledOrders": 1,
+    "totalScreenshots": 5,
+    "plantedCases": {
+      "case1_editedLater": "order-2 (Bilal Sheikh edited 2 brownies to 3 Nutella Brownies)",
+      "case2_cancelled": "order-3 (Zainab Bibi cancelled before dispatch)",
+      "case3_shortPayment": "order-4 (Daniyal Mir total 3150, paid 2500, short by 650)",
+      "case4_duplicateTxn": "order-5 & order-6 both linked to TXN-DUPL-990011 via PAY-20261022-WA0004.jpg",
+      "case5_missingAddress": "order-7 (Sana Javed active order without delivery address)",
+      "case6_blurryScreenshot": "PAY-20261023-WA0005.jpg (blurry/unreadable amount with confidence < 0.6)"
+    }
+  },
+  "orders": [
+    {
+      "id": "order-1",
+      "customerName": "Ahmed Khan",
+      "phone": "03001234567",
+      "address": "House 12, Street 4, Sector F-8/2, Islamabad",
+      "items": [
+        {
+          "name": "Chocolate Fudge Cake",
+          "qty": 1
+        }
+      ],
+      "status": "active",
+      "total": 1800,
+      "paid": 1800,
+      "linkedPaymentFile": "PAY-20261021-WA0001.jpg",
+      "flags": []
+    },
+    {
+      "id": "order-2",
+      "customerName": "Bilal Sheikh",
+      "phone": "03219876543",
+      "address": "Flat 4B, Gulshan-e-Iqbal, Karachi",
+      "items": [
+        {
+          "name": "Nutella Brownies",
+          "qty": 3
+        }
+      ],
+      "status": "active",
+      "total": 3600,
+      "paid": 3600,
+      "linkedPaymentFile": "PAY-20261021-WA0002.jpg",
+      "flags": []
+    },
+    {
+      "id": "order-3",
+      "customerName": "Zainab Bibi",
+      "phone": "03331122334",
+      "address": "House 5, DHA Phase 2, Lahore",
+      "items": [
+        {
+          "name": "Red Velvet Cake",
+          "qty": 1
+        }
+      ],
+      "status": "cancelled",
+      "total": 0,
+      "paid": 0,
+      "linkedPaymentFile": null,
+      "flags": []
+    },
+    {
+      "id": "order-4",
+      "customerName": "Daniyal Mir",
+      "phone": "03335551234",
+      "address": "House 55, DHA Phase 5, Lahore",
+      "items": [
+        {
+          "name": "Lotus Cheesecake",
+          "qty": 1
+        },
+        {
+          "name": "Almond Tea Cake",
+          "qty": 1
+        }
+      ],
+      "status": "active",
+      "total": 3150,
+      "paid": 2500,
+      "linkedPaymentFile": "PAY-20261022-WA0003.jpg",
+      "flags": [
+        {
+          "code": "SHORT_PAYMENT",
+          "severity": "error",
+          "message": "Payment of Rs 2500 is short of total Rs 3150 by Rs 650",
+          "evidence": ["Total: 3150", "Paid: 2500", "Short: 650"]
+        }
+      ]
+    },
+    {
+      "id": "order-5",
+      "customerName": "Fatima Tariq",
+      "phone": "03451122334",
+      "address": "House 9, Sector G-11/3, Islamabad",
+      "items": [
+        {
+          "name": "Chocolate Fudge Cake",
+          "qty": 1
+        }
+      ],
+      "status": "active",
+      "total": 1800,
+      "paid": 1800,
+      "linkedPaymentFile": "PAY-20261022-WA0004.jpg",
+      "flags": [
+        {
+          "code": "DUPLICATE_TXN",
+          "severity": "error",
+          "message": "Duplicate transaction ID TXN-DUPL-990011 also used by order-6 (Hamza Ali)",
+          "evidence": [
+            "TxnId: TXN-DUPL-990011",
+            "Used by: order-5 (Fatima Tariq), order-6 (Hamza Ali)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "order-6",
+      "customerName": "Hamza Ali",
+      "phone": "03129988776",
+      "address": "House 88, Bahria Town Phase 4, Rawalpindi",
+      "items": [
+        {
+          "name": "Chocolate Fudge Cake",
+          "qty": 1
+        }
+      ],
+      "status": "active",
+      "total": 1800,
+      "paid": 1800,
+      "linkedPaymentFile": "PAY-20261022-WA0004.jpg",
+      "flags": [
+        {
+          "code": "DUPLICATE_TXN",
+          "severity": "error",
+          "message": "Duplicate transaction ID TXN-DUPL-990011 also used by order-5 (Fatima Tariq)",
+          "evidence": [
+            "TxnId: TXN-DUPL-990011",
+            "Used by: order-5 (Fatima Tariq), order-6 (Hamza Ali)"
+          ]
+        }
+      ]
+    },
+    {
+      "id": "order-7",
+      "customerName": "Sana Javed",
+      "phone": "03134455667",
+      "address": null,
+      "items": [
+        {
+          "name": "Red Velvet Cake",
+          "qty": 1
+        }
+      ],
+      "status": "active",
+      "total": 1900,
+      "paid": null,
+      "linkedPaymentFile": "PAY-20261023-WA0005.jpg",
+      "flags": [
+        {
+          "code": "MISSING_ADDRESS",
+          "severity": "error",
+          "message": "Active order has no delivery address",
+          "evidence": ["Customer: Sana Javed"]
+        },
+        {
+          "code": "LOW_CONFIDENCE",
+          "severity": "error",
+          "message": "Payment screenshot PAY-20261023-WA0005.jpg has low confidence (0.40) or unreadable amount",
+          "evidence": ["File: PAY-20261023-WA0005.jpg", "Confidence: 0.40"]
+        }
+      ]
+    }
+  ],
+  "payments": [
+    {
+      "id": "pay-1",
+      "fileName": "PAY-20261021-WA0001.jpg",
+      "amount": 1800,
+      "currency": "PKR",
+      "txnId": "TXN-8001",
+      "senderName": "Ahmed Khan",
+      "timestamp": "2026-10-21T10:24:00",
+      "status": "SUCCESS",
+      "confidence": 0.95
+    },
+    {
+      "id": "pay-2",
+      "fileName": "PAY-20261021-WA0002.jpg",
+      "amount": 3600,
+      "currency": "PKR",
+      "txnId": "TXN-8002",
+      "senderName": "Bilal Sheikh",
+      "timestamp": "2026-10-21T14:34:00",
+      "status": "SUCCESS",
+      "confidence": 0.95
+    },
+    {
+      "id": "pay-3",
+      "fileName": "PAY-20261022-WA0003.jpg",
+      "amount": 2500,
+      "currency": "PKR",
+      "txnId": "TXN-8003",
+      "senderName": "Daniyal Mir",
+      "timestamp": "2026-10-22T15:28:00",
+      "status": "SUCCESS",
+      "confidence": 0.95
+    },
+    {
+      "id": "pay-4",
+      "fileName": "PAY-20261022-WA0004.jpg",
+      "amount": 1800,
+      "currency": "PKR",
+      "txnId": "TXN-DUPL-990011",
+      "senderName": "Fatima Tariq",
+      "timestamp": "2026-10-22T10:14:00",
+      "status": "SUCCESS",
+      "confidence": 0.95
+    },
+    {
+      "id": "pay-5",
+      "fileName": "PAY-20261023-WA0005.jpg",
+      "amount": null,
+      "currency": "PKR",
+      "txnId": null,
+      "senderName": null,
+      "timestamp": null,
+      "status": null,
+      "confidence": 0.4
+    }
+  ],
+  "totals": {
+    "totalOrdersCount": 7,
+    "activeOrdersCount": 6,
+    "cancelledOrdersCount": 1,
+    "totalOrderAmount": 14050,
+    "totalPaidAmount": 11500,
+    "shortAmount": 650
+  }
+}

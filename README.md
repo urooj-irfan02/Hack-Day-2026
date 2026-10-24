@@ -1,11 +1,14 @@
-<div align="center">
+# Hisaab
 
-<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+> Your WhatsApp chaos, reconciled.
 
-  <h1>Built with AI Studio</h2>
+Upload an exported WhatsApp chat plus payment screenshots. Hisaab extracts orders, reads each payment, flags mismatches, and exports a verified sheet. The seller approves everything.
 
-  <p>The fastest path from prompt to production with Gemini.</p>
+## Hard Rules
+- Every AI API call goes through `server/gemma.ts` with model constant `process.env.GEMMA_MODEL ?? "gemma-4-26b-a4b-it"`.
+- All arithmetic, price lookup, matching and flagging is deterministic code (`server/reconcile.ts`).
+- Zod schema validation on every model output with automatic retry.
+- Replay mode via `cache/` keyed by SHA-256 hash. `REPLAY=1` serves completely offline.
 
-  <a href="https://aistudio.google.com/apps">Start building</a>
-
-</div>
+## License
+Apache-2.0

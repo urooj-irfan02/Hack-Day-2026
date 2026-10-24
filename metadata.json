@@ -1,0 +1,6 @@
+{
+  "name": "Hisaab",
+  "description": "WhatsApp order reconciliation and payment verification engine powered by Gemma.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

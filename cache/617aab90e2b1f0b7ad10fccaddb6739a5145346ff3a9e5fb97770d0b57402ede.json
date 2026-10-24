@@ -1,0 +1,8 @@
+{
+  "key": "617aab90e2b1f0b7ad10fccaddb6739a5145346ff3a9e5fb97770d0b57402ede",
+  "model": "gemma-4-26b-a4b-it",
+  "prompt": "Extract order details from this Roman Urdu WhatsApp message into structured JSON with these exact fields:\n- customerName: string\n- phone: string or null\n- address: string or null\n- items: array of { \"name\": string, \"qty\": number, \"unit\": string or null }\n- notes: string or null",
+  "input": "Bhai 2 chocolate cake aur 1 brownies box bhej dain address: Flat 4B, Gulshan, Karachi. Name: Bilal - 03219876543",
+  "response": "{\"customerName\":\"Bilal\",\"phone\":\"03219876543\",\"address\":\"Flat 4B, Gulshan, Karachi\",\"items\":[{\"name\":\"chocolate cake\",\"qty\":2,\"unit\":\"pcs\"},{\"name\":\"brownies box\",\"qty\":1,\"unit\":\"box\"}],\"notes\":null}",
+  "timestamp": "2026-10-24T08:02:57.713Z"
+}
